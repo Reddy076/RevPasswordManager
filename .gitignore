@@ -1,0 +1,53 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# IDE - IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# IDE - Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# IDE - VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env.local
+
+# Compiled
+*.class
+*.jar
+*.war
+
+# Package files
+*.zip
+*.tar.gz
+
+# Test output
+test-output/
+surefire-reports/
+
+# Spring Boot
+*.pid
+
+# Documentation
+docs/
