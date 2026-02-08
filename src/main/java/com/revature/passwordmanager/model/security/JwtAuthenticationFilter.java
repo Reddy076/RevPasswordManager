@@ -38,7 +38,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     }
 
     jwt = authHeader.substring(7);
-    // Validating token first to avoid unnecessary DB calls if format is wrong
     if (jwtTokenProvider.validateToken(jwt)) {
       username = jwtTokenProvider.getUsernameFromToken(jwt);
 

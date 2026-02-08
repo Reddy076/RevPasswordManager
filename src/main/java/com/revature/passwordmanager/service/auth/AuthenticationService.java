@@ -6,7 +6,7 @@ import com.revature.passwordmanager.dto.response.UserResponse;
 import com.revature.passwordmanager.exception.AuthenticationException;
 import com.revature.passwordmanager.model.user.User;
 import com.revature.passwordmanager.repository.UserRepository;
-import com.revature.passwordmanager.security.JwtTokenProvider;
+import com.revature.passwordmanager.model.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
