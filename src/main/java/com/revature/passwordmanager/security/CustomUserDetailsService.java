@@ -1,4 +1,4 @@
-package com.revature.passwordmanager.model.security;
+package com.revature.passwordmanager.security;
 
 import com.revature.passwordmanager.model.user.User;
 import com.revature.passwordmanager.repository.UserRepository;

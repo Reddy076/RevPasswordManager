@@ -1,4 +1,4 @@
-package com.revature.passwordmanager.service.security;
+package com.revature.passwordmanager.security;
 
 import org.springframework.stereotype.Component;
 

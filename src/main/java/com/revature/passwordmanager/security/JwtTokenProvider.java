@@ -1,4 +1,4 @@
-package com.revature.passwordmanager.model.security;
+package com.revature.passwordmanager.security;
 
 import com.revature.passwordmanager.config.JwtConfig;
 import io.jsonwebtoken.*;
