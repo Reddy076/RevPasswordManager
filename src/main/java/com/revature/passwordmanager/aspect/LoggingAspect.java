@@ -18,45 +18,29 @@ public class LoggingAspect {
 
   private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-  /**
-   * Pointcut that matches all repositories, services and web REST controllers.
-   */
+
   @Pointcut("within(@org.springframework.stereotype.Repository *)" +
       " || within(@org.springframework.stereotype.Service *)" +
       " || within(@org.springframework.web.bind.annotation.RestController *)")
   public void springBeanPointcut() {
-    // Method is empty as this is just a Pointcut, the implementations are in the
-    // advices.
+
   }
 
-  /**
-   * Pointcut that matches all Spring beans in the application's main packages.
-   */
+
   @Pointcut("within(com.revature.passwordmanager..*)")
   public void applicationPackagePointcut() {
     // Method is empty as this is just a Pointcut, the implementations are in the
     // advices.
   }
 
-  /**
-   * Advice that logs methods throwing exceptions.
-   *
-   * @param joinPoint join point for advice
-   * @param e         exception
-   */
+
   @AfterThrowing(pointcut = "applicationPackagePointcut() && springBeanPointcut()", throwing = "e")
   public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
     log.error("Exception in {}.{}() with cause = {}", joinPoint.getSignature().getDeclaringTypeName(),
         joinPoint.getSignature().getName(), e.getCause() != null ? e.getCause() : "NULL");
   }
 
-  /**
-   * Advice that logs when a method is entered and exited.
-   *
-   * @param joinPoint join point for advice
-   * @return result
-   * @throws Throwable throws IllegalArgumentException
-   */
+  
   @Around("applicationPackagePointcut() && springBeanPointcut()")
   public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
     if (log.isDebugEnabled()) {
