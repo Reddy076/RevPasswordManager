@@ -5,7 +5,7 @@ import com.revature.passwordmanager.dto.response.UserResponse;
 import com.revature.passwordmanager.exception.AuthenticationException;
 import com.revature.passwordmanager.model.user.User;
 import com.revature.passwordmanager.repository.UserRepository;
-import com.revature.passwordmanager.service.security.MasterPasswordValidator;
+import com.revature.passwordmanager.security.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
