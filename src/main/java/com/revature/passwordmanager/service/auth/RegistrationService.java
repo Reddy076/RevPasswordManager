@@ -24,7 +24,6 @@ public class RegistrationService {
 
   @Transactional
   public UserResponse registerUser(RegistrationRequest request) {
-    // 1. Check if user already exists
     if (userRepository.existsByEmail(request.getEmail())) {
       throw new AuthenticationException("Email is already in use");
     }
@@ -32,16 +31,12 @@ public class RegistrationService {
       throw new AuthenticationException("Username is already taken");
     }
 
-    // 2. Validate master password strength
     if (!masterPasswordValidator.isValid(request.getMasterPassword())) {
       throw new AuthenticationException("Weak master password: " + masterPasswordValidator.getRequirementsMessage());
     }
 
-    // 3. Generate Salt (Random UUID for simplicity in this context, or could be
-    // CSPRNG bytes)
     String salt = UUID.randomUUID().toString();
 
-    // 4. Create User Entity
     User newUser = User.builder()
         .email(request.getEmail())
         .username(request.getUsername())
@@ -52,10 +47,8 @@ public class RegistrationService {
         .updatedAt(LocalDateTime.now())
         .build();
 
-    // 5. Save to DB
     User savedUser = userRepository.save(newUser);
 
-    // 6. Return Response
     return UserResponse.builder()
         .id(savedUser.getId())
         .email(savedUser.getEmail())
