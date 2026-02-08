@@ -28,7 +28,6 @@ public class AccountDeletionService {
     }
 
     user.setDeletionRequestedAt(LocalDateTime.now());
-    // Schedule deletion for 30 days from now
     user.setDeletionScheduledAt(LocalDateTime.now().plusDays(30));
 
     userRepository.save(user);

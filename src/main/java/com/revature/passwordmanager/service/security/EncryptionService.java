@@ -13,10 +13,6 @@ public class EncryptionService {
 
   private final EncryptionUtil encryptionUtil;
 
-  // In a real production scenario, we would use a Key Management Service (KMS)
-  // For this project, we might derive keys or store a master key securely.
-  // This is a placeholder for the actual key strategy.
-
   public String encrypt(String data, SecretKey key) {
     try {
       return encryptionUtil.encrypt(data, key);

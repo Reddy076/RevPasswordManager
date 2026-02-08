@@ -44,15 +44,10 @@ public class JwtTokenProvider {
           .parseSignedClaims(token);
       return true;
     } catch (MalformedJwtException ex) {
-      // Invalid JWT token
     } catch (ExpiredJwtException ex) {
-      // Expired JWT token
     } catch (UnsupportedJwtException ex) {
-      // Unsupported JWT token
     } catch (IllegalArgumentException ex) {
-      // JWT claims string is empty
     } catch (JwtException ex) {
-      // General JWT exception (Signature, etc.)
     }
     return false;
   }
