@@ -1,53 +1,39 @@
-# Maven
 target/
-*.jar
-*.war
-*.ear
-*.class
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# IDE - IntelliJ
-.idea/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
 *.ipr
-*.iws
-out/
 
-# IDE - Eclipse
-.project
-.classpath
-.settings/
-bin/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# IDE - VS Code
+### VS Code ###
 .vscode/
 
-# Logs
+### Mac ###
+.DS_Store
+
+### Logs ###
 logs/
 *.log
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Environment
-.env
-*.env.local
-
-# Compiled
-*.class
-*.jar
-*.war
-
-# Package files
-*.zip
-*.tar.gz
-
-# Test output
-test-output/
-surefire-reports/
-
-# Spring Boot
-*.pid
-
-# Documentation
-docs/
